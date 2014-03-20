@@ -36,9 +36,32 @@ void mouseClicked() {					// when mouse is clicked
   mets.add( new Meteor() );				// adds new object Meteor to ArrayList
 }
 
-void keyPressed() {						// when a key is pressed
-  if ( !mets.isEmpty() ) {				// if ArrayList mets is not empty, i.e. if there is at least one Meteor instance/object
-    mets.remove(0);						// remove first element in ArrayList mets
-  }
-}
+// void keyPressed() {						// when a key is pressed
+//  if ( !mets.isEmpty() ) {				// if ArrayList mets is not empty, i.e. if there is at least one Meteor instance/object
+//    mets.remove(0);						// remove first element in ArrayList mets
+//  }
+//}
 
+void keyPressed() {										// when a key is pressed
+
+	if (key == 'r' || key == 'R'){						// if that key is r or R
+		if (!mets.isEmpty() ) {							// and if ArrayList mets is not empty, i.e. if there is at least one Meteor instance/object
+			mets.remove(0);								// remove first element in ArrayList mets
+		}
+	} else if (key == 'f' || key == 'F') {				// if that key is f or F
+		for (Meteor met:mets) {							// initiates for loop, declares object met of class Meteor in Arraylist mets
+			if (!met.followMouse){						// if value of variable followMouse for object met is false?
+				met.followMouse = true;					// then set value of followMouse for met to true
+				break;									// ends for loop
+			}
+		}
+	} else if (key == 's' || key == 'S') {				// if that key is s or S
+		for (Meteor met:mets) {							// initiates for loop, declares object met of class Meteor in Arraylist mets
+			if (met.followMouse){						// if value of variable followMouse for object met is true?
+				met.followMouse = false;				// then set value of followMouse for met to false
+				break;									// ends for loop
+			}
+		}
+	}
+
+}

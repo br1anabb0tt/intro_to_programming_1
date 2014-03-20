@@ -5,9 +5,9 @@ public class Planet{						// declares new class called Planet
   int dx, dy;								// declares integer variables dx and dy
   String name;								// declares string variable name
   
-  public Planet(){							// starts defining function Planet()
+  public Planet(){							// starts defining function Planet() - most importantly it is the constructor for the Planet class
     println("making an planet");			// prints text to console
-    loc = new int[2];						// creates array loc with 2 variables
+    loc = new int[2];						// creates array loc of length 2
     assignDefaultValues();					// calls fn that assigns values to variables
   }
   
@@ -42,7 +42,7 @@ public class Meteor extends Planet {									// declares new subclass Meteor tha
   boolean followMouse;													// declares true/false variable followMouse
   
   public Meteor(){														// starts defining function Meteor()
-    super();															// has something to do with superclass of Meteor, i.e. Planet, but not sure exactly what or why it's necessary
+    super();															// "this is calling the constructor on class Planet. we are using the parents constructor since it will initialize all the variables and call assignDefaultValue()"
     println("actually im a meteor");									// prints text to console
     
     myColor = color( random(255), random(255), random(255) );			// generates random numbers up to 255 for rgb values 
