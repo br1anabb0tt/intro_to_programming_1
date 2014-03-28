@@ -36,6 +36,12 @@ void mouseClicked() {					// when mouse is clicked
   mets.add( new Meteor() );				// adds new object Meteor to ArrayList
 }
 
+/* This is probably just a description rather than "pseudocode":
+If distance between center point of met and center point of earth is less than
+or equal to value of ((met.mySize/2) + (earth.mySize/2)) then they have collided.
+Check the same distance again but with sun.mySize in place of earth.mySize.
+If collision detected then run function to change direction or disappear or whatever. */
+
 // void keyPressed() {						// when a key is pressed
 //  if ( !mets.isEmpty() ) {				// if ArrayList mets is not empty, i.e. if there is at least one Meteor instance/object
 //    mets.remove(0);						// remove first element in ArrayList mets
